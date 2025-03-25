@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BiztelAI DS API - Home</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body { padding-top: 70px; }
+    .form-section { margin-bottom: 40px; }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="/">BiztelAI DS API</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" 
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/eda">View EDA</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/dataset_summary">Dataset Summary</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Main Container -->
+  <div class="container">
+    <div class="mt-4 text-center">
+      <h1 class="mb-4">Welcome to BiztelAI DS API</h1>
+      <p class="lead">Test our endpoints below:</p>
+    </div>
+    <div class="row">
+      <!-- Preprocess Endpoint Card -->
+      <div class="col-md-6 form-section">
+        <div class="card">
+          <div class="card-header bg-primary text-white">
+            Test Preprocess Endpoint
+          </div>
+          <div class="card-body">
+            <form action="/preprocess_form" method="post">
+              <div class="form-group">
+                <label for="rawText">Enter Raw Text:</label>
+                <textarea class="form-control" name="text" id="rawText" rows="4" placeholder="Enter raw text here"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Preprocess Text</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Insights Endpoint Card -->
+      <div class="col-md-6 form-section">
+        <div class="card">
+          <div class="card-header bg-success text-white">
+            Test Insights Endpoint
+          </div>
+          <div class="card-body">
+            <form action="/insights_form" method="post">
+              <div class="form-group">
+                <label for="transcriptJson">Enter Transcript JSON:</label>
+                <textarea class="form-control" name="transcript" id="transcriptJson" rows="8" placeholder='Enter transcript JSON here, for example:
+{
+  "article_url": "https://example.com/article",
+  "content": [
+      {"message": "Hello", "agent": "agent_1", "sentiment": "Happy"},
+      {"message": "Hi", "agent": "agent_2", "sentiment": "Neutral"}
+  ]
+}'></textarea>
+              </div>
+              <button type="submit" class="btn btn-success">Get Transcript Insights</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer class="footer bg-dark text-white text-center py-3 mt-4">
+    <div class="container">
+      <span>BiztelAI DS API &copy; 2025</span>
+    </div>
+  </footer>
+  
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
